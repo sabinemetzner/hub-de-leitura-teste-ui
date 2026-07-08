@@ -19,8 +19,8 @@ describe('Criação de conta', () => {
         cy.get('[href="/register.html"]').click();
         cy.get('#name').type(nome);
         cy.get('#email').type(email);
-        cy.get('#password').type(senha, { parseSpecialCharSequences: false });
-        cy.get('#confirm-password').type(senha, { parseSpecialCharSequences: false });
+        cy.get('#password').type(senha, { parseSpecialCharSequences: false, log: false });
+        cy.get('#confirm-password').type(senha, { parseSpecialCharSequences: false, log: false });
         cy.get('#terms-agreement').check();
         cy.get('#register-btn').click();
         cy.contains('Conta criada com sucesso!').should('be.visible');
@@ -37,8 +37,8 @@ describe('Criação de conta', () => {
         cy.get('[href="/register.html"]').click();
         cy.get('#name').type(nome);
         cy.get('#email').type('email-invalido');
-        cy.get('#password').type(senha, { parseSpecialCharSequences: false });
-        cy.get('#confirm-password').type(senha, { parseSpecialCharSequences: false });
+        cy.get('#password').type(senha, { parseSpecialCharSequences: false, log: false });
+        cy.get('#confirm-password').type(senha, { parseSpecialCharSequences: false, log: false });
         cy.get('#terms-agreement').check();
         cy.get('#register-btn').click();
         cy.contains('Email válido é obrigatório').should('be.visible');
@@ -52,8 +52,8 @@ describe('Criação de conta', () => {
         cy.get('#account-link').click();
         cy.get('[href="/register.html"]').click();
         cy.get('#name').type(nome);
-        cy.get('#password').type(senha, { parseSpecialCharSequences: false });
-        cy.get('#confirm-password').type(senha, { parseSpecialCharSequences: false });
+        cy.get('#password').type(senha, { parseSpecialCharSequences: false, log: false });
+        cy.get('#confirm-password').type(senha, { parseSpecialCharSequences: false, log: false });
         cy.get('#terms-agreement').check();
         cy.get('#register-btn').click();
         cy.contains('Email válido é obrigatório').should('be.visible');
@@ -67,8 +67,8 @@ describe('Criação de conta', () => {
         cy.get('#account-link').click();
         cy.get('[href="/register.html"]').click();
         cy.get('#email').type(email);
-        cy.get('#password').type(senha, { parseSpecialCharSequences: false });
-        cy.get('#confirm-password').type(senha, { parseSpecialCharSequences: false });
+        cy.get('#password').type(senha, { parseSpecialCharSequences: false, log: false });
+        cy.get('#confirm-password').type(senha, { parseSpecialCharSequences: false, log: false });
         cy.get('#terms-agreement').check();
         cy.get('#register-btn').click();
         cy.contains('Nome deve ter pelo menos 2 caracteres').should('be.visible');
@@ -84,7 +84,7 @@ describe('Criação de conta', () => {
         cy.get('[href="/register.html"]').click();
         cy.get('#name').type(nome);
         cy.get('#email').type(email);
-        cy.get('#confirm-password').type(senha, { parseSpecialCharSequences: false });
+        cy.get('#confirm-password').type(senha, { parseSpecialCharSequences: false, log: false });
         cy.get('#terms-agreement').check();
         cy.get('#register-btn').click();
         cy.get('#password').should('have.class', 'is-invalid');
@@ -100,7 +100,7 @@ describe('Criação de conta', () => {
         cy.get('[href="/register.html"]').click();
         cy.get('#name').type(nome);
         cy.get('#email').type(email);
-        cy.get('#password').type(senha, { parseSpecialCharSequences: false });
+        cy.get('#password').type(senha, { parseSpecialCharSequences: false, log: false });
         cy.get('#terms-agreement').check();
         cy.get('#register-btn').click();
         cy.contains('Senhas não coincidem').should('be.visible');
@@ -124,8 +124,8 @@ describe('Criação de conta', () => {
         cy.get('[href="/register.html"]').click();
         cy.get('#name').type(nome);
         cy.get('#email').type(email);
-        cy.get('#password').type(senha);
-        cy.get('#confirm-password').type(senha);
+        cy.get('#password').type(senha, { log: false });
+        cy.get('#confirm-password').type(senha, { log: false });
         cy.get('#terms-agreement').check();
         cy.get('#register-btn').click();
         cy.get('#password').should('have.class', 'is-invalid');
@@ -141,8 +141,8 @@ describe('Criação de conta', () => {
         cy.get('[href="/register.html"]').click();
         cy.get('#name').type(nome);
         cy.get('#email').type(email);
-        cy.get('#password').type(senha, { parseSpecialCharSequences: false });
-        cy.get('#confirm-password').type('senhaDiferente123');
+        cy.get('#password').type(senha, { parseSpecialCharSequences: false, log: false });
+        cy.get('#confirm-password').type('senhaDiferente123', { log: false });
         cy.get('#terms-agreement').check();
         cy.get('#register-btn').click();
         cy.contains('Senhas não coincidem').should('be.visible');
@@ -158,8 +158,8 @@ describe('Criação de conta', () => {
         cy.get('[href="/register.html"]').click();
         cy.get('#name').type(nome);
         cy.get('#email').type(email);
-        cy.get('#password').type(senha, { parseSpecialCharSequences: false });
-        cy.get('#confirm-password').type(senha, { parseSpecialCharSequences: false });
+        cy.get('#password').type(senha, { parseSpecialCharSequences: false, log: false });
+        cy.get('#confirm-password').type(senha, { parseSpecialCharSequences: false, log: false });
         cy.get('#register-btn').click();
         cy.contains('Você deve aceitar os termos de uso').should('be.visible');
     })

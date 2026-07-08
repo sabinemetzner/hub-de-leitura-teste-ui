@@ -12,7 +12,7 @@ class LoginPage {
     }
 
     if (senha) {
-      cy.get('#password').type(senha, { parseSpecialCharSequences: false });
+      cy.get('#password').type(senha, { parseSpecialCharSequences: false, log: false });
     }
   }
 

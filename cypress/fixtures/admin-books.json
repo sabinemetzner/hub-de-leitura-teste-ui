@@ -1,0 +1,27 @@
+{
+  "livroBase": {
+    "titulo": "LivroTesteAdmin",
+    "autor": "Autora Teste QA",
+    "isbnPrefixo": "978-85-E2E",
+    "categoria": "Tecnologia",
+    "editora": "Editora QA",
+    "ano": 2026,
+    "paginas": 240,
+    "exemplares": 4,
+    "idioma": "Português",
+    "descricao": "Livro temporario criado para teste automatizado de administracao.",
+    "capa": "livro-padrao.png"
+  },
+  "edicao": {
+    "sufixoTitulo": "Editado",
+    "autor": "Autora Teste QA Atualizada",
+    "categoria": "Ficção",
+    "editora": "Editora QA Atualizada",
+    "ano": 2025,
+    "paginas": 300,
+    "exemplares": 4,
+    "idioma": "Português",
+    "descricao": "Livro temporario atualizado durante o teste automatizado.",
+    "capa": "livro-padrao.png"
+  }
+}

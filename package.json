@@ -8,8 +8,10 @@
     "start": "cd ../hub-de-leitura-integrado && set NODE_ENV=production&& node src/server.js",
     "cy:open": "set ELECTRON_RUN_AS_NODE=&& cypress open",
     "cy:run": "set ELECTRON_RUN_AS_NODE=&& cypress run",
+    "cy:run:report": "set ELECTRON_RUN_AS_NODE=&& cypress run --reporter mocha-junit-reporter",
+    "cy:run:admin-books": "set ELECTRON_RUN_AS_NODE=&& cypress run --spec cypress/e2e/admin-books.cy.js --browser electron --config video=false",
     "cy:run:login": "set ELECTRON_RUN_AS_NODE=&& cypress run --spec cypress/e2e/login.cy.js --browser electron --config video=false",
-    "cy:run:cloud": "set ELECTRON_RUN_AS_NODE=&& cypress run --record"
+    "cy:run:cloud": "set ELECTRON_RUN_AS_NODE=&& cypress run --record --reporter mocha-junit-reporter"
   },
   "repository": {
     "type": "git",
@@ -26,5 +28,8 @@
   "dependencies": {
     "@faker-js/faker": "^9.9.0",
     "cypress": "^15.17.0"
+  },
+  "devDependencies": {
+    "mocha-junit-reporter": "^2.2.1"
   }
 }

@@ -6,8 +6,8 @@ class CadastroPage {
   preencherFormulario({ nome, email, senha }) {
     cy.get('#name').clear().type(nome);
     cy.get('#email').clear().type(email);
-    cy.get('#password').clear().type(senha, { parseSpecialCharSequences: false });
-    cy.get('#confirm-password').clear().type(senha, { parseSpecialCharSequences: false });
+    cy.get('#password').clear().type(senha, { parseSpecialCharSequences: false, log: false });
+    cy.get('#confirm-password').clear().type(senha, { parseSpecialCharSequences: false, log: false });
     cy.get('#terms-agreement').check();
   }
 

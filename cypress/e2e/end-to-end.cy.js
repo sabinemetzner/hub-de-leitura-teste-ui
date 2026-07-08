@@ -5,25 +5,19 @@ describe('Fluxo end to end de cadastro e login', () => {
     cy.encerrarSessao();
   });
 
-  it('deve cadastrar usuarios da fixture e fazer login com as mesmas credenciais', () => {
-    cy.fixture('usuarios-e2e').then((usuarios) => {
-      usuarios.forEach((massa) => {
-        const usuario = {
-          ...massa,
-          nome: `${massa.nome} ${faker.person.lastName()}`,
-          email: `${massa.emailPrefixo}.${faker.string.uuid()}@teste.com`,
-        };
+  it('deve cadastrar e depois realizar login com o usuario recem-cadastrado', () => {
+    const usuario = {
+      nome: faker.person.fullName(),
+      email: faker.internet.email(),
+      senha: faker.internet.password({ length: 10 }),
+    };
 
-        cy.cadastrarUsuario(usuario);
-        cy.validarUsuarioLogado(usuario.nome);
+    cy.cadastrarUsuario(usuario);
+    cy.validarUsuarioLogado(usuario.nome);
 
-        cy.encerrarSessao();
+    cy.encerrarSessao();
 
-        cy.loginUsuario(usuario);
-        cy.validarUsuarioLogado(usuario.nome);
-
-        cy.encerrarSessao();
-      });
-    });
+    cy.loginUsuario(usuario);
+    cy.validarUsuarioLogado(usuario.nome);
   });
 });

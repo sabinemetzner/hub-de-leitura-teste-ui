@@ -28,6 +28,12 @@ ou em modo headless:
 npm run cy:run
 ```
 
+Para gerar relatorio automatizado em XML (JUnit):
+
+```bash
+npm run cy:run:report
+```
+
 ## Organizacao
 
 - `cypress/e2e/end-to-end.cy.js`: fluxo principal de cadastro e login em um unico `it`.
@@ -37,5 +43,23 @@ npm run cy:run
 
 ## Cypress Cloud
 
-O script `npm run cy:run:cloud` esta pronto para execucao com `--record`.
-Para usar o Cypress Cloud, configure o `projectId` em `cypress.config.js` e a variavel `CYPRESS_RECORD_KEY` com a chave do seu projeto.
+O script `npm run cy:run:cloud` executa com `--record` e gera relatorio JUnit na pasta `cypress/reports/junit`.
+
+1. Configure as variaveis de ambiente antes da execucao:
+
+```powershell
+$env:CYPRESS_PROJECT_ID="seu_project_id"
+$env:CYPRESS_RECORD_KEY="sua_record_key"
+```
+
+2. Execute o comando:
+
+```bash
+npm run cy:run:cloud
+```
+
+## Seguranca de dados sensiveis
+
+- Os campos de senha sao digitados com `log: false` para nao expor credenciais no Command Log do Cypress.
+- O token de autenticacao usado em chamadas de API de admin e enviado com `log: false` para evitar exposicao em evidencias.
+- Use `cypress.env.json` apenas localmente para dados sensiveis (o arquivo esta no `.gitignore`).
