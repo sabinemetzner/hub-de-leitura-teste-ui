@@ -4,10 +4,26 @@
       "cenario": "usuario comum",
       "email": "usuario@teste.com",
       "senha": "user123",
+      "nome": "Usuário Padrão",
       "redirecionamento": "/dashboard.html"
     },
     {
       "cenario": "administrador",
+      "email": "admin@biblioteca.com",
+      "senha": "admin123",
+      "nome": "Bibliotecário Admin",
+      "redirecionamento": "/admin-dashboard.html"
+    }
+  ],
+  "contasDemo": [
+    {
+      "cenario": "botao usar usuario comum",
+      "email": "usuario@teste.com",
+      "senha": "user123",
+      "redirecionamento": "/dashboard.html"
+    },
+    {
+      "cenario": "botao usar administrador",
       "email": "admin@biblioteca.com",
       "senha": "admin123",
       "redirecionamento": "/admin-dashboard.html"
@@ -25,6 +41,27 @@
       "cenario": "usuario inexistente",
       "email": "usuario.inexistente@teste.com",
       "senha": "Senha@123456",
+      "statusCode": 401,
+      "mensagem": "Email ou senha incorretos."
+    },
+    {
+      "cenario": "senha com espaco extra",
+      "email": "usuario@teste.com",
+      "senha": "user123 ",
+      "statusCode": 401,
+      "mensagem": "Email ou senha incorretos."
+    },
+    {
+      "cenario": "senha com caixa alta",
+      "email": "usuario@teste.com",
+      "senha": "USER123",
+      "statusCode": 401,
+      "mensagem": "Email ou senha incorretos."
+    },
+    {
+      "cenario": "senha valida de outro usuario",
+      "email": "usuario@teste.com",
+      "senha": "admin123",
       "statusCode": 401,
       "mensagem": "Email ou senha incorretos."
     }
@@ -48,5 +85,9 @@
       "senha": "",
       "campoInvalido": "#password"
     }
-  ]
+  ],
+  "senhaVisivel": {
+    "email": "usuario@teste.com",
+    "senha": "user123"
+  }
 }
