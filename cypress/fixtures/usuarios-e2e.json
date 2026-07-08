@@ -1,0 +1,12 @@
+[
+  {
+    "nome": "Usuario E2E Um",
+    "emailPrefixo": "usuario.e2e.um",
+    "senha": "Senha@123456"
+  },
+  {
+    "nome": "Usuario E2E Dois",
+    "emailPrefixo": "usuario.e2e.dois",
+    "senha": "Senha@654321"
+  }
+]
