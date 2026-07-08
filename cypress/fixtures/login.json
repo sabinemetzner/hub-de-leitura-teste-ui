@@ -1,0 +1,52 @@
+{
+  "positivos": [
+    {
+      "cenario": "usuario comum",
+      "email": "usuario@teste.com",
+      "senha": "user123",
+      "redirecionamento": "/dashboard.html"
+    },
+    {
+      "cenario": "administrador",
+      "email": "admin@biblioteca.com",
+      "senha": "admin123",
+      "redirecionamento": "/admin-dashboard.html"
+    }
+  ],
+  "negativosApi": [
+    {
+      "cenario": "senha incorreta",
+      "email": "usuario@teste.com",
+      "senha": "senhaIncorreta123",
+      "statusCode": 401,
+      "mensagem": "Email ou senha incorretos."
+    },
+    {
+      "cenario": "usuario inexistente",
+      "email": "usuario.inexistente@teste.com",
+      "senha": "Senha@123456",
+      "statusCode": 401,
+      "mensagem": "Email ou senha incorretos."
+    }
+  ],
+  "negativosFormulario": [
+    {
+      "cenario": "email invalido",
+      "email": "email-invalido",
+      "senha": "user123",
+      "campoInvalido": "#email"
+    },
+    {
+      "cenario": "email vazio",
+      "email": "",
+      "senha": "user123",
+      "campoInvalido": "#email"
+    },
+    {
+      "cenario": "senha vazia",
+      "email": "usuario@teste.com",
+      "senha": "",
+      "campoInvalido": "#password"
+    }
+  ]
+}

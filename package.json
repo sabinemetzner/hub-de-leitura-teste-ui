@@ -6,9 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cd ../hub-de-leitura-integrado && set NODE_ENV=production&& node src/server.js",
-    "cy:open": "cypress open",
-    "cy:run": "cypress run",
-    "cy:run:cloud": "cypress run --record"
+    "cy:open": "set ELECTRON_RUN_AS_NODE=&& cypress open",
+    "cy:run": "set ELECTRON_RUN_AS_NODE=&& cypress run",
+    "cy:run:login": "set ELECTRON_RUN_AS_NODE=&& cypress run --spec cypress/e2e/login.cy.js --browser electron --config video=false",
+    "cy:run:cloud": "set ELECTRON_RUN_AS_NODE=&& cypress run --record"
   },
   "repository": {
     "type": "git",

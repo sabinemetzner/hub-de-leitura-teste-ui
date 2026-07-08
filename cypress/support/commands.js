@@ -34,6 +34,18 @@ Cypress.Commands.add('loginUsuario', ({ email, senha }) => {
   loginPage.validarLoginConcluido();
 });
 
+Cypress.Commands.add('tentarLoginUsuario', ({ email, senha, statusCode }) => {
+  cy.intercept('POST', '/api/login').as('tentativaLoginUsuario');
+
+  loginPage.acessar();
+  loginPage.preencherFormulario({ email, senha });
+  loginPage.enviar();
+
+  cy.wait('@tentativaLoginUsuario')
+    .its('response.statusCode')
+    .should('eq', statusCode);
+});
+
 Cypress.Commands.add('validarUsuarioLogado', (nome) => {
   dashboardPage.validarAcesso();
   dashboardPage.validarNomeUsuario(nome);
