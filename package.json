@@ -9,8 +9,8 @@
     "cy:open": "set ELECTRON_RUN_AS_NODE=&& cypress open",
     "cy:run": "set ELECTRON_RUN_AS_NODE=&& cypress run",
     "cy:run:report": "set ELECTRON_RUN_AS_NODE=&& cypress run --reporter mocha-junit-reporter",
-    "cy:run:admin-books": "set ELECTRON_RUN_AS_NODE=&& cypress run --spec cypress/e2e/admin-books.cy.js --browser electron --config video=false",
-    "cy:run:login": "set ELECTRON_RUN_AS_NODE=&& cypress run --spec cypress/e2e/login.cy.js --browser electron --config video=false",
+    "cy:run:admin-books": "set ELECTRON_RUN_AS_NODE=&& cypress run --spec cypress/e2e/admin-books.cy.js --browser electron",
+    "cy:run:login": "set ELECTRON_RUN_AS_NODE=&& cypress run --spec cypress/e2e/login.cy.js --browser electron",
     "cy:run:cloud": "set ELECTRON_RUN_AS_NODE=&& cypress run --record --reporter mocha-junit-reporter"
   },
   "repository": {
